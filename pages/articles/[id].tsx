@@ -16,7 +16,10 @@ const Article: NextPage = () => {
           property="og:url"
           content="https://media-exp1.licdn.com/dms/image/C4E03AQGUaQaWDznMPQ/profile-displayphoto-shrink_800_800/0/1569602062184?e=1645056000&v=beta&t=YTWnI08eeSQBNETY-BFgBjQjAoBYZvK_aE2zKVqBID4"
         />
-        <meta property="og:title" content="Test" />
+        <meta
+          property="og:title"
+          content="Upward Farms Co-Founder, Matt Larosa, fish"
+        />
         <meta
           property="og:description"
           content="Upward Farms Co-Founder, Matt Larosa, fish"
