@@ -17,11 +17,11 @@ const Article: NextPage = () => {
         />
         <meta
           property="og:title"
-          content="Upward Farms Co-Founder, Matt Larosa, fish"
+          content="Upward Farms Co-Founder, Matt Larosa, fish 1"
         />
         <meta
           property="og:description"
-          content="Upward Farms Co-Founder, Matt Larosa, fish"
+          content="Upward Farms Co-Founder, Matt Larosa, fish 2"
         />
         <meta property="og:type" content="video.other" />
         <link
@@ -34,7 +34,7 @@ const Article: NextPage = () => {
         />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="400" />
-        <title>Upward Farms Co-Founder, Matt Larosa, fish</title>
+        <title>Upward Farms Co-Founder, Matt Larosa, fish 3</title>
         <meta
           name="description"
           content="Upward Farms Co-Founder, Matt Larosa, fish"
