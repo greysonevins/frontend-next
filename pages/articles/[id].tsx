@@ -10,7 +10,6 @@ const Article: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
         <meta property="og:site_name" content="CNN News" />
         <meta
           property="og:url"
@@ -44,7 +43,7 @@ const Article: NextPage = () => {
       </Head>
 
       <main>
-        <h1>This is article {query.id}</h1>
+        <h1>This is article test {query.id}</h1>
 
         <p>
           Get started by editing <code>pages/index.tsx</code>
