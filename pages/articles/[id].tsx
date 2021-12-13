@@ -43,7 +43,7 @@ const Article: NextPage = () => {
       </Head>
 
       <main>
-        <h1>This is article test {query.id}</h1>
+        <h1>This is article test again {query.id}</h1>
 
         <p>
           Get started by editing <code>pages/index.tsx</code>
