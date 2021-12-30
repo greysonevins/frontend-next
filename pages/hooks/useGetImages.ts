@@ -78,7 +78,7 @@ export const useGetImage = () => {
           });
       }
     },
-    [setLoading, setImageData, setError, readFileDataAsBase64]
+    [setLoading, setImageData, setError]
   );
   return {
     onDrop,
