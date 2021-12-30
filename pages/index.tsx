@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { ArticleForm } from './components/ArticleForm';
+import { ArticleForm } from '../components/ArticleForm';
 
 const Home: NextPage = () => {
   return (

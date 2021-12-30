@@ -4,16 +4,15 @@ import {
   Container,
   createTheme,
   CssBaseline,
-  FormControlLabel,
   Grid,
   TextField,
   ThemeProvider,
   Typography,
 } from '@mui/material';
 import React, { useMemo, useState } from 'react';
-import { Data } from '../api/articles/[id]';
+import { Data } from '../pages/api/articles/[id]';
 import { UploadImage } from './UploadImage';
-const API = process.env.API || '';
+const API = process.env.REACT_APP_API || '';
 
 const theme = createTheme();
 export const ArticleForm = () => {
@@ -47,12 +46,14 @@ export const ArticleForm = () => {
     [newArticle?.imagePage, newArticle?.imageHeadline]
   );
   console.log({ newArticle, isValidForm });
+  console.log({ API });
   return (
     <React.Fragment>
-      {API}
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
+          <p>{API}</p>
+
           <Box
             sx={{
               marginTop: 8,

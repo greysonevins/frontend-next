@@ -3,6 +3,6 @@ require('dotenv').config();
 module.exports = {
   reactStrictMode: true,
   env: {
-    API: process.env.API,
+    REACT_APP_API: process.env.REACT_APP_API,
   },
 };

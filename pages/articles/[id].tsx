@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios';
 import Error from 'next/error';
-import type { GetServerSideProps, GetStaticProps, NextPage } from 'next';
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Data } from '../api/articles/[id]';
@@ -43,7 +43,7 @@ const Article: React.FC<ArticleProps> = ({ article, errorCode }) => {
   );
 };
 
-const API = process.env.API || '';
+const API = process.env.REACT_APP_API || '';
 
 export const getStaticProps: GetStaticProps<ArticleProps> = async (context) => {
   console.log({ context });

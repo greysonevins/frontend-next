@@ -11,9 +11,7 @@ import {
   Grid,
 } from '@mui/material';
 import { useGetImage } from '../hooks/useGetImages';
-import { Data } from '../api/articles/[id]';
-import EXIF from 'exif-js';
-import { getBase64Strings } from 'exif-rotate-js/lib';
+import { Data } from '../pages/api/articles/[id]';
 
 export const UploadImage = ({
   setData,
