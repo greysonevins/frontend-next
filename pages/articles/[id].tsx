@@ -2,20 +2,19 @@ import axios, { AxiosError } from 'axios';
 import Error from 'next/error';
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
+import { ArticleData } from '../api/articles/[id]';
+import Fab from '@mui/material/Fab';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useRouter } from 'next/router';
-import { Data } from '../api/articles/[id]';
+
+const API = process.env.REACT_APP_API || '';
 
 type ArticleProps = {
-  article?: Data;
+  article?: ArticleData;
   errorCode?: number;
 };
 const Article: React.FC<ArticleProps> = ({ article, errorCode }) => {
-  const { query } = useRouter();
-  console.log({ art: article, errorCode });
-  // console.log({ query });
-  // const req = `/api/articles/${query?.id || ''}`;
-  // console.log({ req });
-  // axios.get(req).then((res) => console.log({ data: res?.data }));
+  const router = useRouter();
   if (errorCode) {
     return <Error statusCode={errorCode} />;
   }
@@ -39,20 +38,25 @@ const Article: React.FC<ArticleProps> = ({ article, errorCode }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <img src={article?.imagePage || ''} />
+      <Fab
+        onClick={() => router.push('/')}
+        variant="extended"
+        color="primary"
+        aria-label="create your own"
+        sx={{ position: 'absolute', bottom: 16, right: 16 }}
+      >
+        <AddCircleOutlineIcon sx={{ mr: 1 }} />
+        Create Your Own
+      </Fab>
     </div>
   );
 };
 
-const API = process.env.REACT_APP_API || '';
-
 export const getStaticProps: GetStaticProps<ArticleProps> = async (context) => {
-  console.log({ context });
-  const req = `${API}/articles/${context?.params?.id || ''}`;
-  console.log({ req });
+  const req = `${API}articles/${context?.params?.id || ''}`;
   try {
     const res = await axios.get(req);
-    const article = res?.data;
-    console.log({ article });
+    const article: ArticleData = res?.data;
     return {
       props: {
         article,
@@ -60,7 +64,6 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async (context) => {
     };
   } catch (e) {
     const error = e as AxiosError;
-    console.log({ e });
     return {
       props: {
         errorCode: error.response?.status,

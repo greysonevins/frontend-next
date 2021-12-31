@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckIcon from '@mui/icons-material/Check';
 import {
@@ -11,14 +11,14 @@ import {
   Grid,
 } from '@mui/material';
 import { useGetImage } from '../hooks/useGetImages';
-import { Data } from '../pages/api/articles/[id]';
+import { NewArticleData } from '../pages/api/articles';
 
 export const UploadImage = ({
   setData,
   dataKey,
   formError,
 }: {
-  setData: React.Dispatch<React.SetStateAction<Partial<Data>>>;
+  setData: React.Dispatch<React.SetStateAction<NewArticleData>>;
   dataKey: string;
   formError: boolean;
 }) => {
@@ -33,11 +33,9 @@ export const UploadImage = ({
 
   useEffect(() => {
     if (imgData) {
-      console.log({ dataKey, imgData });
       setData((d) => ({ ...d, [dataKey]: imgData }));
     }
   }, [setData, imgData, dataKey]);
-  console.log({ imgData });
   return (
     <React.Fragment key={dataKey}>
       <Grid container spacing={2}>

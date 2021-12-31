@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export type Data = {
+export type ArticleData = {
   id: string;
   imageHeadline: string;
   title: string;
@@ -13,7 +13,7 @@ const API = process.env.REACT_APP_API || '';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<ArticleData>
 ) {
   const {
     query: { id },
