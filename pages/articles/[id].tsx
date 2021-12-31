@@ -43,7 +43,7 @@ const Article: React.FC<ArticleProps> = ({ article, errorCode }) => {
         variant="extended"
         color="primary"
         aria-label="create your own"
-        sx={{ position: 'absolute', bottom: 16, right: 16 }}
+        sx={{ position: 'fixed', bottom: 100, right: 16 }}
       >
         <AddCircleOutlineIcon sx={{ mr: 1 }} />
         Create Your Own
